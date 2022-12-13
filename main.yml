@@ -1,0 +1,10 @@
+- name: Instalando uma lista de pacotes no debian
+  hosts: localhost
+  tasks:
+    - name: instalando pacotes necessários para executar a aplicação
+      become: true
+      apt:
+        name: ['docker', 'docker-compose', 'git']
+        state: present
+        update_cache: yes
+
